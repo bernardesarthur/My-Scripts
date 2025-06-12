@@ -15,22 +15,27 @@ echo "   Arthur Linux Bootstrap  "
 echo "==========================="
 sleep 1; echo
 
-echo "[1/7] Atualizando sistema..."
+echo "[1/8] Atualizando sistema..."
 echo
 apt update && apt upgrade -y && apt --purge autoremove -y
 sleep 1; echo
 
-echo "[2/7] Instalando pacotes..."
+echo "[2/8] Instalando pacotes..."
 echo
 apt install sudo lsof snapd vim tcptraceroute bash-completion build-essential irqbalance grc tree bmon net-tools nmap dnsutils whois htop curl wget apt-transport-https dirmngr mtr traceroute screenfetch iotop openssh-server netdiscover gnupg2 gnupg1 aptitude hping3 fping lshw unzip lsb-release ipcalc man-db hdparm fzf chrony qemu-guest-agent -y
 sleep 1; echo
 
-echo "[3/7] Configurando serviços..."
+echo "[3/8] Configurando serviços..."
 echo
 systemctl enable --now irqbalance snapd chrony qemu-guest-agent
 sleep 1; echo
 
-echo "[4/7] Configurando Chrony..."
+echo "[4/8] Instalando BTOP..."
+echo
+snap install btop
+sleep 1; echo
+
+echo "[5/8] Configurando Chrony..."
 echo
 cat <<EOF >/etc/chrony/chrony.conf
 pool a.ntp.br iburst
@@ -45,7 +50,7 @@ EOF
 systemctl restart chrony
 sleep 1; echo
 
-echo "[5/7] Otimizando shell..."
+echo "[6/8] Otimizando shell..."
 sleep 1; echo
 
 # Autocomplete global (inserir no bash.bashrc apenas se ainda não inserido)
@@ -140,7 +145,7 @@ EOF
 
 sleep 1
 
-echo "[6/7] Ajustando kernel..."
+echo "[7/8] Ajustando kernel..."
 sleep 1; echo
 
 cat <<EOF >/etc/sysctl.conf
@@ -167,7 +172,7 @@ EOF
 sysctl -p
 sleep 1; echo
 
-echo "[7/7] Carregando módulos TCP adicionais..."
+echo "[8/8] Carregando módulos TCP adicionais..."
 echo
 for module in tcp_illinois tcp_westwood tcp_htcp; do
     modprobe -a $module
