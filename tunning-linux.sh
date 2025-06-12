@@ -17,7 +17,7 @@ sleep 1; echo
 
 echo "[1/7] Atualizando sistema..."
 echo
-apt update && apt upgrade -y
+apt update && apt upgrade -y && apt --purge autoremove -y
 sleep 1; echo
 
 echo "[2/7] Instalando pacotes..."
