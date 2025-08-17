@@ -22,7 +22,7 @@ sleep 1; echo
 
 echo "[2/8] Instalando pacotes..."
 echo
-apt install sudo lsof snapd vim tcptraceroute bash-completion build-essential irqbalance grc tree bmon net-tools nmap dnsutils whois htop curl wget apt-transport-https dirmngr mtr traceroute screenfetch iotop openssh-server netdiscover gnupg2 gnupg1 aptitude hping3 fping lshw unzip lsb-release ipcalc man-db hdparm fzf chrony qemu-guest-agent firmware-linux firmware-linux-free firmware-linux-nonfree -y
+apt install sudo lsof snapd vim tcptraceroute bash-completion build-essential irqbalance grc tree bmon net-tools nmap dnsutils whois htop curl wget apt-transport-https dirmngr mtr traceroute screenfetch iotop openssh-server netdiscover gnupg2 gnupg1 aptitude hping3 fping lshw unzip lsb-release ipcalc man-db hdparm fzf chrony qemu-guest-agent -y
 sleep 1; echo
 
 echo "[3/8] Configurando serviços..."
