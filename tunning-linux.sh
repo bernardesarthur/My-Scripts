@@ -148,7 +148,7 @@ sleep 1
 echo "[7/8] Ajustando kernel..."
 sleep 1; echo
 
-cat <<EOF >/etc/sysctl.conf
+cat <<EOF >/etc/sysctl.d/local.conf
 vm.swappiness = 5
 vm.dirty_ratio = 10
 vm.dirty_background_ratio = 5
@@ -169,7 +169,7 @@ net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 EOF
 
-sysctl -p
+sysctl -p /etc/sysctl.d/local.conf
 sleep 1; echo
 
 echo "[8/8] Carregando módulos TCP adicionais..."
