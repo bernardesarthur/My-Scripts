@@ -10,3 +10,8 @@ Proxmox:
 ```
 bash -c "$(wget -qO- https://raw.githubusercontent.com/bernardesarthur/My-Scripts/refs/heads/main/tunning-proxmox.sh)"
 ```
+
+Upgrade Debian:
+```
+bash -c "$(wget -qO- https://raw.githubusercontent.com/bernardesarthur/My-Scripts/refs/heads/main/upgrade-debian.sh)"
+```
