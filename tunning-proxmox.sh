@@ -150,10 +150,12 @@ sleep 1; echo
 
 cat <<EOF >/etc/sysctl.d/local.conf
 vm.swappiness = 5
+vm.vfs_cache_pressure = 50
 vm.dirty_ratio = 10
 vm.dirty_background_ratio = 5
 net.core.somaxconn = 65535
 net.core.rmem_max = 16777216
+net.core.rmem_default = 16777216
 net.core.wmem_max = 16777216
 net.ipv4.tcp_mem = 4096 87380 16777216
 net.ipv4.tcp_rmem = 4096 87380 16777216
@@ -166,6 +168,8 @@ net.ipv4.tcp_fin_timeout = 15
 net.core.netdev_max_backlog = 8192
 net.ipv4.ip_local_port_range = 1024 65535
 net.core.default_qdisc = fq
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_max_syn_backlog = 4096
 net.ipv4.tcp_congestion_control = bbr
 EOF
 
