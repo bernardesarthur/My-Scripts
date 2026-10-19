@@ -47,7 +47,7 @@ rtcsync
 logdir /var/log/chrony
 EOF
 
-systemctl restart chrony
+systemctl daemon-reload ; systemctl enable chrony ; systemctl restart chrony
 sleep 1; echo
 
 echo "[6/8] Otimizando shell..."
